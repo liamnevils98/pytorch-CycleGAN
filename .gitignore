@@ -1,7 +1,8 @@
 .DS_Store
 debug*
 datasets/
-checkpoints/
+checkpoints/*/[0-9]*
+#checkpoints/
 results/
 build/
 dist/
@@ -41,3 +42,6 @@ test/.coverage
 test/data/legacy_serialized.pt
 *~
 .idea
+*checkpoint*
+*-checkpoint
+index.html

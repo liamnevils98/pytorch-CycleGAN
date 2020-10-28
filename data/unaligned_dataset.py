@@ -3,7 +3,9 @@ from data.base_dataset import BaseDataset, get_transform
 from data.image_folder import make_dataset
 from PIL import Image
 import random
-
+from skimage.io import imread
+from torchvision import transforms
+import numpy as np
 
 class UnalignedDataset(BaseDataset):
     """
@@ -54,12 +56,15 @@ class UnalignedDataset(BaseDataset):
         else:   # randomize the index for domain B to avoid fixed pairs.
             index_B = random.randint(0, self.B_size - 1)
         B_path = self.B_paths[index_B]
-        A_img = Image.open(A_path).convert('RGB')
-        B_img = Image.open(B_path).convert('RGB')
-        # apply image transformation
+        ####CHANGE
+        #A_img = Image.open(A_path).convert('RGB')
+        #B_img = Image.open(B_path).convert('RGB')
+        A_img = Image.fromarray(np.asarray((imread(A_path)/2**16)*255, dtype=np.uint8))
+        B_img = Image.fromarray(np.asarray((imread(B_path)/2**16)*255, dtype=np.uint8))
+        
         A = self.transform_A(A_img)
         B = self.transform_B(B_img)
-
+        
         return {'A': A, 'B': B, 'A_paths': A_path, 'B_paths': B_path}
 
     def __len__(self):
