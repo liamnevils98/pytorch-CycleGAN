@@ -1,7 +1,6 @@
 Testing using CycleGAN to add "realistic" noise to high signal-to-noise images given an unaligned dataset.
 
-## Acknowledgments
-If you use this code for your research, please cite our papers.
+### Acknowledgments
 ```
 @inproceedings{CycleGAN2017,
   title={Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networkss},
