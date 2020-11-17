@@ -1,5 +1,5 @@
 Train Command:
-python train.py --dataroot /data/Ro_ImageData/ --name imagedata --model cycle_gan --input_nc 1 --output_nc 1 --save_epoch_freq 1 --display_id 0 --gpu_ids 1
+python pytorch-CycleGAN/train.py --dataroot /data/Ro_ImageData/ --name imagedata --model cycle_gan --input_nc 1 --output_nc 1 --save_epoch_freq 1 --display_id 0 --gpu_ids 1
 
 Test Command:
 python pytorch-CycleGAN/test.py --dataroot /data/Ro_ImageData/ --name imagedata --model cycle_gan --input_nc 1 --output_nc 1 --gpu_ids 1 --results_dir /lfs/Nevils/ --crop_size 1024 --load_size 1024 --display_winsize 1024
