@@ -1,5 +1,20 @@
 Train Command:
-python pytorch-CycleGAN/train.py --dataroot /lfs/Nevils/ --name imagedata --model cycle_gan --input_nc 1 --output_nc 1 --save_epoch_freq 1 --display_id 0 --gpu_ids 1 --crop_size 1024 --load_size 1024 --display_winsize 1024 --n_epochs 
+python pytorch-CycleGAN/train.py --dataroot /lfs/Nevils/ --name imagedata --model cycle_gan --input_nc 1 --output_nc 1 --save_epoch_freq 1 --display_id 0 --gpu_ids 1 --n_epochs 50 --n_epochs_decay 100 --continue_train
 
 Test Command:
-python pytorch-CycleGAN/test.py --dataroot /data/Ro_ImageData/ --name imagedata --model cycle_gan --input_nc 1 --output_nc 1 --gpu_ids 1 --results_dir /lfs/Nevils/ --crop_size 1024 --load_size 1024 --display_winsize 1024
+python pytorch-CycleGAN/test.py --dataroot /lfs/Nevils/ --name imagedata --model cycle_gan --input_nc 1 --output_nc 1 --gpu_ids 1 --results_dir /lfs/Nevils/ --crop_size 1024 --load_size 1024 --display_winsize 1024 --num_test 1000
+
+
+
+Train Command:
+python train.py --dataroot /data/Ro_ImageData/ --name imagedata --model cycle_gan --input_nc 1 --output_nc 1 --save_epoch_freq 1 --display_id 0 --gpu_ids 1
+
+Test Command:
+python test.py --dataroot /data/Ro_ImageData/ --name imagedata --model cycle_gan --input_nc 1 --output_nc 1 --gpu_ids 1
+
+
+
+Last Train: 
+python pytorch-CycleGAN/train.py --dataroot /data/Ro_ImageData/ --name jonas --model cycle_gan --input_nc 1 --output_nc 1 --save_epoch_freq 1 --display_id 0 --gpu_ids 1 --n_epochs 40 --n_epochs_decay 10
+
+python pytorch-CycleGAN/train.py --dataroot /lfs/Nevils/ --name liam --model cycle_gan --input_nc 1 --output_nc 1 --save_epoch_freq 1 --display_id 0 --gpu_ids 1 --n_epochs 40 --n_epochs_decay 10
