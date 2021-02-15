@@ -36,6 +36,6 @@ cp -R /data/Ro_ImageData/trainB /lfs/Nevils/CGAN/trainA
 cp -R /data/Ro_ImageData/trainA /lfs/Nevils/CGAN/testB
 cp -R /data/Ro_ImageData/trainB /lfs/Nevils/CGAN/testA
 
-python pytorch-CycleGAN/train.py --dataroot /lfs/Nevils/CGAN/ --name art_noise  --model cycle_gan --input_nc 1 --output_nc 1 --save_epoch_freq 1 --display_id 0 --gpu_ids 1 --n_epochs 10 --n_epochs_decay 10
+python pytorch-CycleGAN/train.py --dataroot /lfs/Nevils/CGAN/ --name art_noise  --model cycle_gan --input_nc 1 --output_nc 1 --save_epoch_freq 1 --display_id 0 --gpu_ids 1 --n_epochs 100 --n_epochs_decay 100
 
 python pytorch-CycleGAN/test.py --dataroot /lfs/Nevils/CGAN/ --name art_noise --model cycle_gan --input_nc 1 --output_nc 1 --gpu_ids 1 --results_dir /lfs/Nevils/CGAN --num_test 1000
